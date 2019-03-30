@@ -8,6 +8,14 @@ import SignUp from './components/signup/signup';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      user: ''
+    }
+  }
+
   render() {
     return (
       <div>
@@ -16,7 +24,6 @@ class App extends Component {
             {/* <Route path="/" exact render={(props) => <Home {...props}/>}/> */}
             <Route exact path="/" component={LoginPage}/>
             <Route exact path="/signup/" component={SignUp}/>
-            import SignUp from './signup/signup';
             {/* NOT FOUND PAGE */}
           </Switch>
         </BrowserRouter>
