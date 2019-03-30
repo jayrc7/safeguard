@@ -3,11 +3,11 @@ import { Form } from 'semantic-ui-react';
 
 class SignUp extends Component {
   constructor() {
-			super();
+		super();
 			
-      this.state= {
-				role: ''
-			}
+		this.state= {
+			role: ''
+		}
 	}
 
 	handleFirstInput = event => {
