@@ -1,37 +1,121 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react'
+import { Grid, Image, Button, Popup, Segment} from 'semantic-ui-react'
 import Nav from './../nav/Nav.jsx'
-import NewsFeed from './NewsFeed';
-import Map from './Map';
+import NewsFeed from './NewsFeed'
+import worldMap from './images/the-united-states-of-america-map.png'
+import AddEventForm from './AddEventForm'
+import Event from './Event'
+//import Map from './Map';
 
-const items = [
-{
-  childKey: 0,
-  image: '/images/wireframe/image.png',
-  header: 'Wild Lion!',
-  description: 'There is a wild lion on the loose! Stay indoors.',
-},
-{
-  childKey: 1,
-  image: '/images/wireframe/image.png',
-  header: 'Free cookies',
-  description: 'cookies',
-},
+import './HomePage.css'
+
+const currEventInfo =
+  {
+    subject: "Tiger sighting",
+    date: "2/3/18",
+    description: "Come see the tiger!"
+  }
+
+const eventsInfo = [
+  {
+    subject: "Tiger sighting",
+    date: "2/3/18",
+    description: "Come see the tiger!"
+  },
+  {
+    subject: "Tiger sighting2",
+    date: "2/3/18",
+    description: "Come see the tiger!2"
+  },
+  {
+    subject: "Tiger sighting3",
+    date: "2/3/18",
+    description: "Come see the tiger!3"
+  },
+  {
+    subject: "Tiger sighting4",
+    date: "2/3/18",
+    description: "Come see the tiger!4"
+  },
+  {
+    subject: "Tiger sighting5",
+    date: "2/3/18",
+    description: "Come see the tiger!5"
+  },
+  {
+    subject: "Tiger sighting6",
+    date: "2/3/18",
+    description: "Come see the tiger!6"
+  }
 ]
 
 class HomePage extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      events:[],
+      currEventInfo: {
+        subject: '',
+        date: '',
+        description: ''
+      }
+    };
+
+    this.eventIndex = 0;
+  }
+
+  updateCurrEvent(event) {
+    const newState = this.event.target.value;
+    this.setState(newState);
+  }
+
+
+  addEvent = () => {
+    if (this.state.currEventInfo === '') {
+      alert('Input something first');
+      return;
+    }
+    const eventInstance = {
+      index: this.eventIndex,
+      content: this.state.currEventInfo
+    };
+    this.eventIndex += 1;
+
+    const prevEvent = this.state.events;
+    const newEvents = [eventInstance, ...prevEvent];
+    const newState = {
+      events: newEvents,
+      currEventInfo: {
+        subject: '',
+        date: '',
+        description: ''
+      }
+    };
+    this.setState(newState);
+  }
 
   render() {
+    const events = eventsInfo.map((text) => <Event subject={text.subject} date={text.date} description={text.description}/>)
+
     return (
       <div>
         <Nav/>
-        <Grid divided='vertically'>
+        <Grid centered='true' padded='true'>
           <Grid.Row columns={2}>
-            <Grid.Column>
-              <Map/>
+            <Grid.Column width="11">
+              <Image src={worldMap}/>
             </Grid.Column>
             <Grid.Column width="5">
-              <NewsFeed items={items}/>
+              <Popup flowing='true' keepInViewPort='true' size='huge' position='bottom left'
+                trigger={<Button icon='add' floated='left'/>}
+                content=<AddEventForm/>
+                basic
+                on='click'
+              />
+              <Segment style={{overflow:'auto', maxHeight:770}} size='massive'>
+                  {events}
+              </Segment>
             </Grid.Column>
           </Grid.Row>
         </Grid>
