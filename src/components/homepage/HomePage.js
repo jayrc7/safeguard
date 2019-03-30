@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react'
-
+import Nav from './../nav/Nav.jsx'
 import NewsFeed from './NewsFeed';
 import Map from './Map';
 
@@ -24,6 +24,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
+        <Nav/>
         <Grid divided='vertically'>
           <Grid.Row columns={2}>
             <Grid.Column>
