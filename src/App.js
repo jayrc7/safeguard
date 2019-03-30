@@ -5,6 +5,7 @@ import LoginPage from './components/LoginPage';
 import SignUp from './components/signup/signup';
 import SignIn from './components/signin/signin';
 import HomePage from './components/homepage/HomePage';
+import Nav from './components/nav/Nav';
 
 import './App.css';
 
@@ -39,6 +40,13 @@ class App extends Component {
             <Route exact path="/" component={LoginPage}/>
             <Route exact path="/homepage/" component={HomePage}/>
             import SignIn from './homepage/HomePage';
+            {/* NOT FOUND PAGE */}
+          </Switch>
+          <Switch>
+            {/* <Route path="/" exact render={(props) => <Home {...props}/>}/> */}
+            <Route exact path="/" component={Nav}/>
+            <Route exact path="/community/" component={Community}/>
+            import SignIn from './community/Community';
             {/* NOT FOUND PAGE */}
           </Switch>
         </BrowserRouter>

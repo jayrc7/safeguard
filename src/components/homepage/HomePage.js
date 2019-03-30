@@ -5,7 +5,7 @@ import NewsFeed from './NewsFeed'
 import worldMap from './images/the-united-states-of-america-map.png'
 import AddEventForm from './AddEventForm'
 import Event from './Event'
-//import Map from './Map';
+import Map from './Map';
 
 import './HomePage.css'
 
@@ -104,7 +104,7 @@ class HomePage extends React.Component {
         <Grid centered='true' padded='true'>
           <Grid.Row columns={2}>
             <Grid.Column width="11">
-              <Image src={worldMap}/>
+              <Map/>
             </Grid.Column>
             <Grid.Column width="5">
               <Popup flowing='true' keepInViewPort='true' size='huge' position='bottom left'
@@ -114,7 +114,7 @@ class HomePage extends React.Component {
                 on='click'
               />
               <Segment style={{overflow:'auto', maxHeight:770}} size='massive'>
-                  {events}
+                {events}
               </Segment>
             </Grid.Column>
           </Grid.Row>

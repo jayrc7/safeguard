@@ -29,16 +29,16 @@ class Nav extends Component {
         <Grid padded className="tablet computer only">
           <Menu borderless fluid inverted size="massive">
             <Container>
-              <Menu.Item header as="a" href="#root">
+              <Menu.Item header as="a" href="/homepage">
                 SafeGuard
               </Menu.Item>
-              <Menu.Item active as="a" href="#root">
+              <Menu.Item active as="a" href="/homepage">
                 Home
               </Menu.Item>
-              <Menu.Item as="a" href="#root">
+              <Menu.Item as="a" href="/community">
                 Community
               </Menu.Item>
-              <Menu.Item as="a" href="#root">
+              <Menu.Item as="a" href="/patrol">
                 Patrol
               </Menu.Item>
             </Container>
