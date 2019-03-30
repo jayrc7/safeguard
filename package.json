@@ -1,10 +1,10 @@
 {
+  "proxy": "http://localhost:3001",
   "homepage": "https://jayrc7.github.io/safeguard",
   "name": "safeguard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
@@ -16,7 +16,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build&&gh-pages -d build"
+    "server": "node-env-run server --exec nodemon | pino-colada",
+    "deploy": "npm run build&&gh-pages -d build",
+    "dev": "run-p server start"
   },
   "eslintConfig": {
     "extends": "react-app"
