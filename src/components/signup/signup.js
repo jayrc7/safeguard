@@ -4,7 +4,6 @@ import { Form } from 'semantic-ui-react';
 class SignUp extends Component {
   constructor() {
 			super();
-<<<<<<< HEAD
 			
       this.state= {
 				role: ''
@@ -71,9 +70,6 @@ class SignUp extends Component {
 
 		}
 	}
-=======
-  }
->>>>>>> 22ceedb772d4490b1cecce0d1d8ec297d289b597
 
   render(){
 		return(
