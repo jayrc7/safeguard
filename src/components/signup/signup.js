@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import { Form } from 'semantic-ui-react';
 
 // Post to Firebase
@@ -10,8 +9,6 @@ const newSignUp = (data) => {
 class SignUp extends Component {
   constructor() {
 			super();
-			
-      console.log("NAVIGATED a;sdifja;sdoif")
   }
 
   render(){
