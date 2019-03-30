@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
 import {Link, Route} from 'react-router-dom';
 
-
-
 import './LoginPage.css';
 
-class Home extends Component{
+class LoginPage extends Component{
     constructor(props) {
     super(props);
     this.state = {
@@ -40,7 +38,7 @@ class Home extends Component{
                 <Link to="/signup/">Sign up</Link>
               </Button>
 
-              
+
 
 
 
@@ -58,10 +56,10 @@ class Home extends Component{
             <button type="submit">Submit</button>
           </form>
           <p>{this.state.greeting}</p> */}
-              
-            </div> 
+
+            </div>
         );
     }
 }
 
-export default Home;
+export default LoginPage;
