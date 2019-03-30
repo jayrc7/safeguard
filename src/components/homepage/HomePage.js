@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from 'semantic-ui-react'
 
 import NewsFeed from './NewsFeed';
-import Map from './Map';
+//import Map from './Map';
 
 const items = [
 {
@@ -27,7 +27,7 @@ class HomePage extends React.Component {
         <Grid divided='vertically'>
           <Grid.Row columns={2}>
             <Grid.Column>
-              <Map/>
+
             </Grid.Column>
             <Grid.Column width="5">
               <NewsFeed items={items}/>
