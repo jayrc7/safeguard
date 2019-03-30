@@ -6,6 +6,7 @@ import SignUp from './components/signup/signup';
 import SignIn from './components/signin/signin';
 import HomePage from './components/homepage/HomePage';
 import Nav from './components/nav/Nav';
+import Community from './components/community/Community';
 
 import './App.css';
 
