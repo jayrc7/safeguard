@@ -1,0 +1,17 @@
+
+/* CHANGE COLORS OF THE BUTTONS */
+#signinBtn {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 10%;
+    height: 6%;
+}
+
+#signupBtn {
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    width: 10%;
+    height: 6%;
+}

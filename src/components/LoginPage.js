@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
+import {Link, Route} from 'react-router-dom';
+
+
+
+import './LoginPage.css';
 
 class Home extends Component{
     constructor(props) {
@@ -27,7 +32,19 @@ class Home extends Component{
     render(){
         return(
             <div>
-                <h1> Hello </h1>
+
+              <Button id="signinBtn">
+                <Link to="/signin/">Sign in</Link>
+              </Button>
+              <Button id="signupBtn">
+                <Link to="/signup/">Sign up</Link>
+              </Button>
+
+              
+
+
+
+                {/* <h1> Hello </h1>
                 <Button> Button </Button>
 
             <form onSubmit={this.handleSubmit}>
@@ -40,8 +57,8 @@ class Home extends Component{
             />
             <button type="submit">Submit</button>
           </form>
-          <p>{this.state.greeting}</p>
-                
+          <p>{this.state.greeting}</p> */}
+              
             </div> 
         );
     }
