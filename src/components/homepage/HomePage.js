@@ -1,7 +1,8 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react'
+import { Grid, Image } from 'semantic-ui-react'
 import Nav from './../nav/Nav.jsx'
-import NewsFeed from './NewsFeed';
+import NewsFeed from './NewsFeed'
+import worldMap from './images/the-united-states-of-america-map.png'
 //import Map from './Map';
 
 const items = [
@@ -25,10 +26,10 @@ class HomePage extends React.Component {
     return (
       <div>
         <Nav/>
-        <Grid divided='vertically'>
+        <Grid divided='vertically' padded='vertically'>
           <Grid.Row columns={2}>
-            <Grid.Column>
-
+            <Grid.Column width="10">
+              <Image src={worldMap}/>
             </Grid.Column>
             <Grid.Column width="5">
               <NewsFeed items={items}/>
