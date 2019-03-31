@@ -42,21 +42,6 @@ class LoginPage extends Component{
 
 
 
-                {/* <h1> Hello </h1>
-                <Button> Button </Button>
-
-            <form onSubmit={this.handleSubmit}>
-            <label htmlFor="name">Enter your name: </label>
-            <input
-              id="name"
-              type="text"
-              value={this.state.name}
-              onChange={this.handleChange}
-            />
-            <button type="submit">Submit</button>
-          </form>
-          <p>{this.state.greeting}</p> */}
-
             </div>
         );
     }

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Grid, Button, Popup, Segment} from 'semantic-ui-react'
+import { Grid, Button, Popup, Segment, Header} from 'semantic-ui-react'
 import Nav from './../nav/Nav.jsx'
-import NewsFeed from './NewsFeed'
-import worldMap from './images/the-united-states-of-america-map.png'
 import AddEventForm from './AddEventForm'
 import Event from './Event'
 import Map from './Map';
+
+import firebase from '../../firebase';
 
 import './HomePage.css'
 
@@ -104,6 +104,7 @@ class HomePage extends React.Component {
         <Grid centered='true' padded='true'>
           <Grid.Row columns={2}>
             <Grid.Column width="11">
+              <Header as='h3' dividing size='huge'>Safety Map</Header>
               <Map/>
             </Grid.Column>
             <Grid.Column width="5">
