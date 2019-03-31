@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Form } from 'semantic-ui-react';
+import {setCookie} from 'react-cookie';
 
 import firebase from '../../firebase';
 
@@ -178,9 +179,8 @@ class SignUp extends Component {
 					break;
 				}
 			}
-			///////////////////////// CHILDRENNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
-
-			db.collection("Parents").doc(this.state.first + this.state.last).set({
+			
+			let profile = {
 				first: this.state.first,
 				last: this.state.last,
 				email: this.state.email,
@@ -190,8 +190,9 @@ class SignUp extends Component {
 				children: children,
 				communities: this.state.selectedCommunities,
 				pass: this.state.pass
-			})
-
+			}
+			setCookie("profile", profile);
+			db.collection("Parents").doc(this.state.first + this.state.last).set( profile );
 		}
 	}
 
