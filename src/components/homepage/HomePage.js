@@ -98,9 +98,6 @@ class HomePage extends React.Component {
                console.log(newInfo)
             }
         })
-    
-
-    
 
     return (
       <div>
@@ -121,7 +118,7 @@ class HomePage extends React.Component {
                   on='click'
                   />
                 <Segment color='black' style={{overflow:'auto', maxHeight:670}} size='large'>
-                    {events}
+                    {entries}
                 </Segment>
             </Grid.Column>
           </Grid.Row>

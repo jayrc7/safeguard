@@ -23,27 +23,26 @@
 #header {
   position: absolute;
   top: 13%;
-  left: 32%;
+  width: 100%;
   font-size: 1000%;
   text-align: center;
-  margin:auto;
   color: white;
   /* -webkit-text-stroke: 4px black; */
   text-shadow:
-  | 2px 2px 0 #FFFFFF,
+   2px 2px 0 #FFFFFF,
    -1px -1px 0 #FFFFFF,
     1px -1px 0 #FFFFFF,
     -1px 1px 0 #FFFFFF,
     1px 1px 0 #FFFFFF;
 }
 
-#description {
-  position: absolute;
-  top: 84%;
-  left: 33%;
+#description {  
   font-size: 350%;
   text-align: center;
-  margin:auto;
+  margin: 0 auto;
+  background-color: grey;
+  color: orange;
+  height: 11vh;
 }
 
 #image {

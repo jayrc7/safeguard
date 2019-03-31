@@ -205,11 +205,14 @@ class SignUp extends Component {
 				<h1 id='header'>SafeGuard</h1>
 			</div>
 				<Form>
-					<Form.Group widths="equal">
+
+					<h3>Name</h3>
+					<Form.Group widths="half">
 						<Form.Field label="First Name" control="input" value={this.state.first} onChange={this.handleFirstInput}/>
 						<Form.Field label="Last Name" control="input" value={this.state.last} onChange={this.handleLastInput}/>
 					</Form.Group>
 
+					<h3>Contact</h3>
 					<Form.Group>
 						<Form.Field name="email"
 												label="Email"
@@ -225,12 +228,13 @@ class SignUp extends Component {
 						<Form.Field label="Phone" control="input" placeholder="(xxx)xxx-xxxx"value={this.state.phone} onChange={this.handlePhoneInput}/>
 					</Form.Group>
 
+					<h3>Address</h3>
 					<Form.Group>
-						<h1>Address</h1>
 						<Form.Field label="Street Address" control="input" value={this.state.street} onChange={this.handleStreetInput}/>
 						<Form.Field label="City" control="input" value={this.state.city} onChange={this.handleCityInput}/>
 					</Form.Group>
 
+					<h3>Children</h3>
 					<Form.Group>
 						<Form.Field label="Child" control="input" value={this.state.kid1} onChange={this.handleKidsInput1}/>
 						<Form.Field label="Password" control="input" type="password" value={this.state.kidPass1} onChange={this.handleKidsPassInput1}/>
@@ -242,15 +246,14 @@ class SignUp extends Component {
 					<Form.Group>
 						<Form.Field label="Child" control="input" value={this.state.kid3} onChange={this.handleKidsInput3}/>
 						<Form.Field label="Password" control="input" type="password" value={this.state.kidPass3} onChange={this.handleKidsPassInput3}/>
-
 					</Form.Group>
 
+					<h3>Local Communities</h3>
 					<Form.Group>
-						<h1>Local Communities</h1>
 						<LocalCommunities data={this.state.localCommunities} toggle={this.onToggle}/>
-
 					</Form.Group>
 
+					<h3>Password</h3>
 					<Form.Group>
 						<Form.Field label="Password" control="input" type="password" value={this.state.pass} onChange={this.handlePassInput}/>
 						<Form.Field label="Verify password" control="input" type="password" value={this.state.passVeri} onChange={this.handlePassVeriInput}/>
