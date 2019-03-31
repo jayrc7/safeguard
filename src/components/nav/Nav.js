@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import cookie from 'react-cookies';
+import {Redirect} from 'react-router-dom';
 
 import { Button, Container, Dropdown, Grid, Header, Icon, Menu } from "semantic-ui-react";
 
@@ -16,26 +17,33 @@ class Nav extends Component {
       }
     }
     console.log(cookie.load("profile"));
+
+    this.logout = this.logout.bind(this);
   };
 
-  handleToggleDropdownMenu = () => {
-    let newState = Object.assign({}, this.state);
-    if (newState.dropdownMenuStyle.display === "none") {
-      newState.dropdownMenuStyle = { display: "flex" };
-    } else {
-      newState.dropdownMenuStyle = { display: "none" };
-    }
+  handleToggleDropdownMenu = e => {
+    let profile = cookie.load("profile");
+    profile["currentCommunity"] = e.target.value;
+    cookie.set("profile", profile);
 
-    this.setState(newState);
+    this.props.refresh();
   };
 
   logout = () => {
     cookie.remove('profile');
-    this.props.history.push(`/`)
+    //this.props.history.push(`/`);
+    console.log(this.props);
+    this.setState({})
   }
 
   render() {
-    const communities = cookie.load("profile").communities.map((community) => <Dropdown.Item>{community}</Dropdown.Item> )
+
+    if ( !cookie.load("profile") ) {
+      console.log("FA;SOIDFJA;SIDJF;AOSIDJF;AOISDJF;OIJ")
+      return <Redirect to='/'/>
+    }
+
+    const communities = cookie.load("profile").communities.map((community) => <Dropdown.Item value={community} onClick={this.handleToggleDropdownMenu}>{community}</Dropdown.Item> )
 
     return (
       <div className="Nav">

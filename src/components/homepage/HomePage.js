@@ -106,12 +106,16 @@ class HomePage extends React.Component {
     this.setState(newState);
   }
 
+  refresh = () => {
+    this.setState({})
+  }
+
   render() {
     const events = eventsInfo.map((text) => <Event subject={text.subject} date={text.date} description={text.description}/>)
 
     return (
       <div>
-        <Nav/>
+        <Nav refresh={this.refresh}/>
         <Grid centered='true' padded='true'>
           <Grid.Row columns={2}>
             <Grid.Column width="11">

@@ -10,11 +10,14 @@ const panes = [
 ]
 
 class Patrols extends React.Component {
+  refresh = () => {
+    this.setState({})
+  }
 
   render() {
     return (
       <div>
-        <Nav/>
+        <Nav refresh={this.refresh}/>
         <Grid centered='true' padded='true'>
           <Grid.Row columns={2}>
             <Grid.Column width="8">

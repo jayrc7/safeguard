@@ -6,12 +6,14 @@ import ChatImg from './chat.jpg'
 import CommunityEvents from './CommunityEvents'
 
 class Community extends React.Component{
+  refresh = () => {
+    this.setState({})
+  }
+
     render() {
-
-
         return (
           <div>
-            <Nav/>
+            <Nav refresh={this.refresh}/>
             <Grid centered='true' padded='true'>
               <Grid.Row columns={3}>
                 <Grid.Column width="4">
