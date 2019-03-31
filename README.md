@@ -70,9 +70,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 This project connects community members in order to improve safety in the local area. Features include:
 
  • Community alert boards for safety related concerns that everyone on the app/website can view
+ 
  • Community message board for communicating to ensure that everyone can be easily accounted for
+ 
  • Interactive map with safehouse locations in case of safety hazards
+ 
  • Text messaging system to call for aid, alerting all community members and directing the caller to the nearest safehouse
+ 
  • A schedule system for neighborhood patrols that members can sign up for
  
 The project is designed to bring people within communities in closer contact with one another not only to improve safety, but also to strengthen community bonds.
