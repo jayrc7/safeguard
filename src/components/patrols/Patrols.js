@@ -4,6 +4,7 @@ import Nav from '../nav/Nav'
 import Schedule from './Schedule'
 import AddPatrolForm from './AddPatrolForm'
 import { Grid, Header, Segment, Tab, Popup, Button } from 'semantic-ui-react'
+import cookie from 'react-cookies';
 
 const panes = [
   {menuItem: 'Monday', render: ()=><Tab.Pane>Monday</Tab.Pane>},

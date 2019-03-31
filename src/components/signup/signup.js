@@ -18,7 +18,7 @@ function LocalCommunities(prop) {
 		let tmp1 = '';
 
 		prop.data.forEach((name) => {
-			tmp1 = <input type="checkbox" onChange={prop.toggle} value={prop.data[0]} label={prop.data[0]}></input>;
+			tmp1 = <input type="checkbox" onChange={prop.toggle} value={prop.data[0]} label={prop.data[0]	}></input>;
 		})
 
 		return tmp1	;
