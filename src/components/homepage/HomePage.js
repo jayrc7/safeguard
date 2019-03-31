@@ -1,9 +1,10 @@
 import React from 'react';
 import { Grid, Button, Popup, Segment, Header} from 'semantic-ui-react'
-import Nav from './../nav/Nav.jsx'
+import Nav from './../nav/Nav'
 import AddEventForm from './AddEventForm'
 import Event from './Event'
 import Map from './Map';
+import cookie from 'react-cookies'
 
 import firebase from '../../firebase';
 
@@ -105,18 +106,23 @@ class HomePage extends React.Component {
     this.setState(newState);
   }
 
+  refresh = () => {
+    this.setState({})
+  }
+
   render() {
     const events = eventsInfo.map((text) => <Event subject={text.subject} date={text.date} description={text.description}/>)
 
     return (
       <div>
-        <Nav/>
+        <Nav refresh={this.refresh}/>
         <Grid centered='true' padded='true'>
           <Grid.Row columns={2}>
             <Grid.Column width="11">
               <Header as='h3' dividing size='huge'>Safety Map</Header>
               <Map/>
             </Grid.Column>
+
             <Grid.Column width="5">
               <Header as='h3' dividing size='huge'>Event Schedule</Header>
                 <Popup flowing='true' keepInViewPort='true' size='huge' position='bottom left'

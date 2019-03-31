@@ -1,16 +1,19 @@
 import React from 'react';
-import { Grid, Image, Header } from 'semantic-ui-react'
-import Nav from './../nav/Nav.jsx'
+import { Grid, Header, Image} from 'semantic-ui-react'
+import Nav from './../nav/Nav'
 import MemberList from './MemberList'
 import ChatImg from './chat.jpg'
 import CommunityEvents from './CommunityEvents'
+
 class Community extends React.Component{
+  refresh = () => {
+    this.setState({})
+  }
+
     render() {
-
-
         return (
           <div>
-            <Nav/>
+            <Nav refresh={this.refresh}/>
             <Grid centered='true' padded='true'>
               <Grid.Row columns={3}>
                 <Grid.Column width="4">
