@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Header } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 import GoogleMapReact from 'google-map-react'
 import SafehouseMarker from './SafehouseMarker'
 
@@ -37,7 +37,6 @@ class Map extends React.Component {
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '83vh', width: '100%' }}>
-      <Header as='h3' dividing size='huge'>Safety Map</Header>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyCK7kmYS38lPKj1XBVp7D-OFVUaExOtHDo" }}
           defaultCenter={this.props.center}
