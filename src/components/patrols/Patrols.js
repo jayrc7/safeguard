@@ -1,22 +1,26 @@
 import React from 'react'
 import Map from '../homepage/Map'
 import Nav from '../nav/Nav'
-import { Grid, Header, Segment } from 'semantic-ui-react'
+import Schedule from './Schedule'
+import { Grid, Header, Segment, Tab } from 'semantic-ui-react'
 
+const panes = [
+  {menuItem: 'Monday', render: ()=><Tab.Pane>Monday</Tab.Pane>},
+]
 
 class Patrols extends React.Component {
+
   render() {
     return (
       <div>
         <Nav/>
         <Grid centered='true' padded='true'>
           <Grid.Row columns={2}>
-            <Grid.Column width="5">
-              <Segment style={{overflow:'auto', maxHeight:770}} size='massive'>
-                <h1>Schedule</h1>
-              </Segment>
+            <Grid.Column width="8">
+              <Header as='h3' dividing size='huge'>Patrol Schedule</Header>
+              <Schedule/>
             </Grid.Column>
-            <Grid.Column width="11">
+            <Grid.Column width="8">
               <Header as='h3' dividing size='huge'>Patrol Map</Header>
               <Map/>
             </Grid.Column>
