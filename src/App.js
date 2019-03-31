@@ -7,7 +7,6 @@ import SignIn from './components/signin/signin';
 import HomePage from './components/homepage/HomePage';
 import Community from './components/community/Community';
 import Patrols from './components/patrols/Patrols';
-import Nav from './components/nav/Nav';
 
 import './App.css';
 

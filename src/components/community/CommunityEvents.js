@@ -7,34 +7,19 @@ import Event from './../homepage/Event'
 
 const eventsInfo = [
   {
-    subject: "Tiger sighting",
-    date: "2/3/18",
-    description: "Come see the tiger!"
+    subject: "Nieghborhood Meeting",
+    date: "6:30PM 3/30/18",
+    description: "Let's talk about what we can do to make this community safer at..."
   },
   {
-    subject: "Tiger sighting2",
-    date: "2/3/18",
-    description: "Come see the tiger!2"
+    subject: "Community Potluck",
+    date: "4:00PM 4/3/18",
+    description: "Let's get together and bring food for a bonding session at..."
   },
   {
-    subject: "Tiger sighting3",
-    date: "2/3/18",
-    description: "Come see the tiger!3"
-  },
-  {
-    subject: "Tiger sighting4",
-    date: "2/3/18",
-    description: "Come see the tiger!4"
-  },
-  {
-    subject: "Tiger sighting5",
-    date: "2/3/18",
-    description: "Come see the tiger!5"
-  },
-  {
-    subject: "Tiger sighting6",
-    date: "2/3/18",
-    description: "Come see the tiger!6"
+    subject: "PTA Meeting",
+    date: "9:00AM 4/9/18",
+    description: "Come listen to the local changes being made at our schools."
   }
 ]
 

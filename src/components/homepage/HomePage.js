@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Button, Popup, Segment, Header} from 'semantic-ui-react'
-import Nav from './../nav/Nav.jsx'
+import Nav from './../nav/Nav'
 import AddEventForm from './AddEventForm'
 import Event from './Event'
 import Map from './Map';
@@ -44,9 +44,19 @@ const eventsInfo = [
     description: "Come see the tiger!5"
   },
   {
-    subject: "Tiger sighting6",
+    subject: "Tiger sighting7",
     date: "2/3/18",
     description: "Come see the tiger!6"
+  },
+  {
+    subject: "Tiger sighting7",
+    date: "2/3/18",
+    description: "Come see the tiger!6"
+  },
+  {
+    subject: "Tiger sighting8",
+    date: "2/3/18",
+    description: "Come see the tiger!8"
   }
 ]
 
@@ -101,28 +111,34 @@ class HomePage extends React.Component {
     this.setState(newState);
   }
 
+  refresh = () => {
+    this.setState({})
+  }
+
   render() {
     const events = eventsInfo.map((text) => <Event subject={text.subject} date={text.date} description={text.description}/>)
 
     return (
       <div>
-        <Nav/>
+        <Nav refresh={this.refresh}/>
         <Grid centered='true' padded='true'>
           <Grid.Row columns={2}>
             <Grid.Column width="11">
               <Header as='h3' dividing size='huge'>Safety Map</Header>
               <Map/>
             </Grid.Column>
+
             <Grid.Column width="5">
-              <Popup flowing='true' keepInViewPort='true' size='huge' position='bottom left'
-                trigger={<Button icon='add' floated='left'/>}
-                content={<AddEventForm/>}
-                basic
-                on='click'
-              />
-              <Segment style={{overflow:'auto', maxHeight:770}} size='massive'>
-                {events}
-              </Segment>
+              <Header as='h3' dividing size='huge'>Event Schedule</Header>
+                <Popup flowing='true' keepInViewPort='true' size='huge' position='bottom left'
+                  trigger={<Button icon='add' floated='left'/>}
+                  content={<AddEventForm/>}
+                  basic
+                  on='click'
+                  />
+                <Segment style={{overflow:'auto', maxHeight:720}} size='large'>
+                    {events}
+                </Segment>
             </Grid.Column>
           </Grid.Row>
         </Grid>
