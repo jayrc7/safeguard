@@ -49,15 +49,9 @@ class Nav extends Component {
       <div className="Nav">
         <Grid padded className="tablet computer only">
           <Menu borderless fluid inverted size="massive">
-<<<<<<< HEAD
-            
-              <Menu.Item header as="a" href="#">
-                SafeGuard
-=======
 
               <Menu.Item>
                 <Image src={shield} size='mini'/>
->>>>>>> cb74aba645ed5c3c4f2d9d000ef9b2163ecfce32
               </Menu.Item>
               <Menu.Item as="a" href="/homepage">
                 SafeGuard
