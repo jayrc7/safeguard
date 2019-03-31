@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Popup, Segment} from 'semantic-ui-react'
 import AddEventForm from './../homepage/AddEventForm'
 import Event from './../homepage/Event'
+import cookie from 'react-cookies';
 
 import firebase from '../../firebase';
 
@@ -39,13 +40,21 @@ class CommunityEvents extends React.Component {
     };
 
     this.eventIndex = 0;
+
+    this.updateEventsInfo();
   }
 
-  updateCurrEvent(event) {
-    const newState = this.event.target.value;
-    this.setState(newState);
+  updateEventsInfo = () => {
+    db.collection("Communities").doc('los angeles').collection(cookie.load("profile").currentCommunity).doc("events").get().then((doc) => {
+      var tmp = [];
+      Object.keys(doc.data().events).forEach((key) => {
+        tmp.push(doc.data().events[key]);
+      })
+      this.setState({
+        events: tmp
+      })
+    })
   }
-
 
   addEvent = () => {
     if (this.state.currEventInfo === '') {
@@ -72,35 +81,54 @@ class CommunityEvents extends React.Component {
   }
 
   submit = () => {
+    console.log(this.props);
+
     for ( let comm of this.state.community ) {
-      db.collection("Communities").doc("los angeles").collection(comm).doc("events").get().then((doc) => {
-        let events = doc.data().events;
-        events[this.state.title] = {
-          title: this.state.title,
-          description: this.state.description,
-          time: firebase.firestore.FieldValue.serverTimestamp(),
+      db.collection("Communities").doc("los angeles").collection(comm).doc(this.props.parent).get().then((doc) => {
+        if ( doc.data() !== undefined ) {
+          let events = doc.data().events;
+          events[this.state.title] = {
+            title: this.state.title,
+            description: this.state.description,
+            logged: firebase.firestore.FieldValue.serverTimestamp(),
+            time: this.state.time,
+            date: this.state.date
+          }
+          db.collection("Communities").doc('los angeles').collection(comm).doc(this.props.parent).update({
+            events
+          })
         }
-        db.collection("Communities").doc('los angeles').collection(comm).doc("events").update({
-          events
-        })
+        else {
+          let events = {};
+          events[this.state.title] = {
+            title: this.state.title,
+            description: this.state.description,
+            logged: firebase.firestore.FieldValue.serverTimestamp(),
+            time: this.state.time,
+            date: this.state.date
+          }
+          db.collection("Communities").doc('los angeles').collection(comm).doc(this.props.parent).set({
+            events
+          })
+        }
       })
     }
   }
 
   render() {
-    const events = eventsInfo.map((text) => <Event subject={text.subject} date={text.date} description={text.description}/>)
+    const events = this.state.events.map((text) => <Event subject={text.title} date={text.date} description={text.description}/>)
 
     return (
       <div>
-              <Popup flowing='true' keepInViewPort='true' size='huge' position='bottom left'
-                trigger={<Button icon='add' floated='left'/>}
-                content={<AddEventForm/>}
-                basic
-                on='click'
-              />
-              <Segment style={{overflow:'auto', maxHeight:670, minHeight:670}} size='massive'>
-                  {events}
-              </Segment>
+        <Popup flowing='true' keepInViewPort='true' size='huge' position='bottom left'
+          trigger={<Button icon='add' floated='left'/>}
+          content={<AddEventForm parent="events"/>}
+          basic
+          on='click'
+        />
+        <Segment style={{overflow:'auto', maxHeight:670, minHeight:670}} size='massive'>
+            {events}
+        </Segment>
       </div>
     );
   }

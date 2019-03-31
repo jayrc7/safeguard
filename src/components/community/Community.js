@@ -27,7 +27,7 @@ class Community extends React.Component{
                 </Grid.Column>
                 <Grid.Column width="4">
                 <Header as='h3' dividing size='huge'>Events Board</Header>
-                <CommunityEvents/>
+                <CommunityEvents parent="events"/>
 
                 </Grid.Column>
               </Grid.Row>
