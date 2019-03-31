@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from 'semantic-ui-react'
 import GoogleMapReact from 'google-map-react'
 import SafehouseMarker from './SafehouseMarker'
+import DangerMarker from './DangerMarker'
 
 const safehouses = [
   {
@@ -22,6 +23,21 @@ const safehouses = [
   },
 ]
 
+const dangers = [
+  {
+    lat: 34.050135,
+    lng: -118.247283
+  },
+  {
+    lat: 34.052535,
+    lng: -118.243883
+  },
+  {
+    lat: 34.054895,
+    lng: -118.242993
+  },
+]
+
 class Map extends React.Component {
   static defaultProps = {
     center: {
@@ -33,6 +49,7 @@ class Map extends React.Component {
 
   render() {
     const safehouseMarkers = safehouses.map((markers) => <SafehouseMarker lat={markers.lat} lng={markers.lng}/>)
+    const dangerMarkers = dangers.map((markers) => <DangerMarker lat={markers.lat} lng={markers.lng}/>)
 
     return (
       // Important! Always set the container height explicitly
@@ -43,6 +60,7 @@ class Map extends React.Component {
           defaultZoom={this.props.zoom}
         >
           {safehouseMarkers}
+          {dangerMarkers}
         </GoogleMapReact>
       </div>
     );
