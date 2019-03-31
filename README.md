@@ -65,6 +65,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 ### `npm run build` fails to minify
 
+
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
 This project connects community members in order to improve safety in the local area. Features include:
@@ -78,5 +79,6 @@ This project connects community members in order to improve safety in the local 
  • Text messaging system to call for aid, alerting all community members and directing the caller to the nearest safehouse
  
  • A schedule system for neighborhood patrols that members can sign up for
+ 
  
 The project is designed to bring people within communities in closer contact with one another not only to improve safety, but also to strengthen community bonds.
