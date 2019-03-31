@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Image, Button, Popup, Segment} from 'semantic-ui-react'
+import { Grid, Button, Popup, Segment} from 'semantic-ui-react'
 import Nav from './../nav/Nav.jsx'
 import NewsFeed from './NewsFeed'
 import worldMap from './images/the-united-states-of-america-map.png'
@@ -109,7 +109,7 @@ class HomePage extends React.Component {
             <Grid.Column width="5">
               <Popup flowing='true' keepInViewPort='true' size='huge' position='bottom left'
                 trigger={<Button icon='add' floated='left'/>}
-                content=<AddEventForm/>
+                content={<AddEventForm/>}
                 basic
                 on='click'
               />

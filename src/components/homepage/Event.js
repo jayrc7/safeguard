@@ -10,7 +10,6 @@ class Event extends React.Component {
     return (
       <div>
       <Card centered='true'>
-        <Image src='/images/avatar/large/matthew.png' />
         <Card.Content>
           <Card.Header>{this.props.subject}</Card.Header>
           <Card.Meta>
