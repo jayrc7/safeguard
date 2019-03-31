@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Form } from 'semantic-ui-react';
-import {setCookie} from 'react-cookie';
+import cookie from 'react-cookies'
 
 import firebase from '../../firebase';
 
@@ -191,8 +191,11 @@ class SignUp extends Component {
 				communities: this.state.selectedCommunities,
 				pass: this.state.pass
 			}
-			setCookie("profile", profile);
+
 			db.collection("Parents").doc(this.state.first + this.state.last).set( profile );
+
+			cookie.save('profile', profile);
+			this.props.history.push(`/homepage`)
 		}
 	}
 
