@@ -108,6 +108,7 @@ class HomePage extends React.Component {
               <Map/>
             </Grid.Column>
             <Grid.Column width="5">
+              <Header as='h3' dividing size='huge'>Event Schedule</Header>
               <Popup flowing='true' keepInViewPort='true' size='huge' position='bottom left'
                 trigger={<Button icon='add' floated='left'/>}
                 content={<AddEventForm/>}
