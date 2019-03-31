@@ -13,7 +13,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.post('/sms', function(req, res) {
   var twilio = require('twilio');
   var message = req.body.Body.toLowerCase().trim();
-  console.log(message)
   if(message == "aid"){
     res.send("<Response> <Message> Message received. Members are being notified.\n\nSending location to safehouses and parents...\n\nNearest safehouse is 1234 Street Ave.\n\nRemain calm, help is on the way. </Message> </Response>");
   }

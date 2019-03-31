@@ -4,6 +4,7 @@ import Nav from './../nav/Nav.jsx'
 import AddEventForm from './AddEventForm'
 import Event from './Event'
 import Map from './Map';
+import cookie from 'react-cookies';
 
 import firebase from '../../firebase';
 
@@ -63,6 +64,11 @@ class HomePage extends React.Component {
     };
 
     this.eventIndex = 0;
+  }
+
+  componentWillMount(){
+        let currentCommunity = cookie.load('profile').currentCommunity;
+        console.log(currentCommunity)
   }
 
   updateCurrEvent(event) {
