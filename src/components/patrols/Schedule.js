@@ -1,8 +1,9 @@
 import React from 'react'
+import ScheduleTable from './ScheduleTable'
 import { Tab } from 'semantic-ui-react'
 
 const panes = [
-  { menuItem: 'Monday', render: () => <Tab.Pane>Tab 1 Content</Tab.Pane> },
+  { menuItem: 'Monday', render: () => <Tab.Pane><ScheduleTable/></Tab.Pane> },
   { menuItem: 'Tuesday', render: () => <Tab.Pane>Tab 2 Content</Tab.Pane> },
   { menuItem: 'Wednesday', render: () => <Tab.Pane>Tab 3 Content</Tab.Pane> },
   { menuItem: 'Thursday', render: () => <Tab.Pane>Tab 3 Content</Tab.Pane> },
