@@ -3,7 +3,9 @@ import { Button, Popup, Segment} from 'semantic-ui-react'
 import AddEventForm from './../homepage/AddEventForm'
 import Event from './../homepage/Event'
 
+import firebase from '../../firebase';
 
+const db = firebase.firestore();
 
 const eventsInfo = [
   {
@@ -69,6 +71,22 @@ class CommunityEvents extends React.Component {
     this.setState(newState);
   }
 
+  submit = () => {
+    for ( let comm of this.state.community ) {
+      db.collection("Communities").doc("los angeles").collection(comm).doc("events").get().then((doc) => {
+        let events = doc.data().events;
+        events[this.state.title] = {
+          title: this.state.title,
+          description: this.state.description,
+          time: firebase.firestore.FieldValue.serverTimestamp(),
+        }
+        db.collection("Communities").doc('los angeles').collection(comm).doc("events").update({
+          events
+        })
+      })
+    }
+  }
+
   render() {
     const events = eventsInfo.map((text) => <Event subject={text.subject} date={text.date} description={text.description}/>)
 
@@ -80,7 +98,7 @@ class CommunityEvents extends React.Component {
                 basic
                 on='click'
               />
-              <Segment style={{overflow:'auto', maxHeight:770}} size='massive'>
+              <Segment style={{overflow:'auto', maxHeight:670, minHeight:670}} size='massive'>
                   {events}
               </Segment>
       </div>
