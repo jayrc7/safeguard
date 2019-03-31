@@ -1,11 +1,11 @@
 import React from 'react';
 import { Grid, Button, Popup, Segment, Header} from 'semantic-ui-react'
 import Nav from './../nav/Nav.jsx'
-import NewsFeed from './NewsFeed'
-import worldMap from './images/the-united-states-of-america-map.png'
 import AddEventForm from './AddEventForm'
 import Event from './Event'
 import Map from './Map';
+
+import firebase from '../../firebase';
 
 import './HomePage.css'
 

@@ -2,6 +2,17 @@ import React from 'react'
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 
 class AddEventForm extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      event: '',
+      subject: '',
+      time: 0,
+      community: ''
+    }
+  }
+
   render() {
     return (
       <Form>

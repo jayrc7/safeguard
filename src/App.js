@@ -28,34 +28,10 @@ class App extends Component {
             {/* <Route path="/" exact render={(props) => <Home {...props}/>}/> */}
             <Route exact path="/" component={LoginPage}/>
             <Route exact path="/signup/" component={SignUp}/>
-            {/* NOT FOUND PAGE */}
-          </Switch>
-          <Switch>
-            {/* <Route path="/" exact render={(props) => <Home {...props}/>}/> */}
-            <Route exact path="/" component={LoginPage}/>
             <Route exact path="/signin/" component={SignIn}/>
-            import SignIn from './signin/signin';
-            {/* NOT FOUND PAGE */}
-          </Switch>
-          <Switch>
-            {/* <Route path="/" exact render={(props) => <Home {...props}/>}/> */}
-            <Route exact path="/" component={LoginPage}/>
             <Route exact path="/homepage/" component={HomePage}/>
-            import SignIn from './homepage/HomePage';
-            {/* NOT FOUND PAGE */}
-          </Switch>
-          <Switch>
-            {/* <Route path="/" exact render={(props) => <Home {...props}/>}/> */}
-            <Route exact path="/" component={Nav}/>
             <Route exact path="/community/" component={Community}/>
-            import SignIn from './community/Community';
-            {/* NOT FOUND PAGE */}
-          </Switch>
-          <Switch>
-            {/* <Route path="/" exact render={(props) => <Home {...props}/>}/> */}
-            <Route exact path="/" component={Nav}/>
             <Route exact path="/patrols/" component={Patrols}/>
-            import SignIn from './patrols/Patrols';
             {/* NOT FOUND PAGE */}
           </Switch>
         </BrowserRouter>
