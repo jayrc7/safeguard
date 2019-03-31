@@ -7,18 +7,18 @@ class MemberFeed extends React.Component {
   }
 
   render() {
-    return (  
+    return (
 
     <Feed.Event>
           <Feed.Label image={this.props.url}/>
           <Feed.Content>
-            <Feed.User>{this.props.name}</Feed.User> 
-            <Feed.Date>{this.props.date} </Feed.Date> 
+            <Feed.User>{this.props.name}</Feed.User>
+            <Feed.Date>{this.props.date} </Feed.Date>
             <Feed.Extra > {this.props.points} Community Points </Feed.Extra>
           </Feed.Content>
     </Feed.Event>
-   
-        
+
+
     );
 }
 }

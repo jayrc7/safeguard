@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Form } from 'semantic-ui-react';
 import cookie from 'react-cookies'
+import hood from '../images/ourHood.png'
 
 import firebase from '../../firebase';
 
@@ -15,7 +16,7 @@ function LocalCommunities(prop) {
 	else {
 
 		let tmp1 = '';
-		
+
 		prop.data.forEach((name) => {
 			tmp1 = <input type="checkbox" onChange={prop.toggle} value={prop.data[0]}></input>;
 		})
@@ -27,9 +28,9 @@ function LocalCommunities(prop) {
 class SignUp extends Component {
   constructor() {
 		super();
-			
+
 		this.state= {
-			
+
 		}
 	}
 
@@ -78,7 +79,7 @@ class SignUp extends Component {
 					localCommunities: communities
 				})
 
-			})		
+			})
 		}
 	}
 
@@ -87,7 +88,7 @@ class SignUp extends Component {
 			pass: event.target.value
 		})
 	}
-	
+
 	handlePassVeriInput = event => {
 		this.setState({
 			passVeri: event.target.value
@@ -105,7 +106,7 @@ class SignUp extends Component {
 			kidPass1: event.target.value
 		})
 	}
-	
+
 	handleKidsInput2 = event => {
 		this.setState({
 			kid2: event.target.value
@@ -141,8 +142,8 @@ class SignUp extends Component {
       selectedCommunities.splice(index, 1);
     }
 
-		this.setState({ 
-			selectedCommunities: selectedCommunities 
+		this.setState({
+			selectedCommunities: selectedCommunities
 		});
 
 		console.log(this.state.selectedCommunities);
@@ -157,7 +158,7 @@ class SignUp extends Component {
 			console.log("PASSWORDS DO NOT MATCH")
 		}
 		else {
-	
+
 			let children = [];
 			let i = 1;
 
@@ -174,7 +175,7 @@ class SignUp extends Component {
 					break;
 				}
 			}
-			
+
 			let profile = {
 				first: this.state.first,
 				last: this.state.last,
@@ -199,6 +200,10 @@ class SignUp extends Component {
   render(){
 		return(
 			<div>
+			<img id='image'src={hood} size='small'/>
+			<div id='head-back'>
+				<h1 id='header'>SafeGuard</h1>
+			</div>
 				<Form>
 					<Form.Group widths="equal">
 						<Form.Field label="First Name" control="input" value={this.state.first} onChange={this.handleFirstInput}/>
@@ -206,9 +211,9 @@ class SignUp extends Component {
 					</Form.Group>
 
 					<Form.Group>
-						<Form.Field name="email" 
-												label="Email" 
-												control="input" 
+						<Form.Field name="email"
+												label="Email"
+												control="input"
 												type="email"
 												validation="isEmail"
 												validationError="This is not a valid email"
@@ -237,7 +242,7 @@ class SignUp extends Component {
 					<Form.Group>
 						<Form.Field label="Child" control="input" value={this.state.kid3} onChange={this.handleKidsInput3}/>
 						<Form.Field label="Password" control="input" type="password" value={this.state.kidPass3} onChange={this.handleKidsPassInput3}/>
-						
+
 					</Form.Group>
 
 					<Form.Group>

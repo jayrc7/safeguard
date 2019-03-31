@@ -1,7 +1,7 @@
 import React from 'react';
-import { Form } from 'semantic-ui-react';
+import { Form, Image, Container } from 'semantic-ui-react';
 import cookie from 'react-cookies'
-
+import hood from '../images/ourHood.png'
 import firebase from '../../firebase';
 
 const db = firebase.firestore();
@@ -62,14 +62,18 @@ class SignIn extends React.Component {
   render() {
     return (
       <div>
-        <Form>
+        <img id='image'src={hood}/>
+        <div id='head-back'>
+          <h1 id='header'>SafeGuard</h1>
+        </div>
+        <Form id='signinForm' size='big'>
           <Form.Group>
-            <Form.Field label="Name" 
-                        control="input" 
+            <Form.Field label="Name"
+                        control="input"
                         value={this.state.name}
                         onChange={this.handleNameChange} />
-            <Form.Field label="Password" 
-                        control="input" 
+            <Form.Field label="Password"
+                        control="input"
                         type="password"
                         value={this.state.pass}
                         onChange={this.handlePassChange}/>

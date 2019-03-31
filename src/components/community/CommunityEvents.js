@@ -92,6 +92,7 @@ class CommunityEvents extends React.Component {
 
     return (
       <div>
+<<<<<<< HEAD
         <Popup flowing='true' keepInViewPort='true' size='huge' position='bottom left'
           trigger={<Button icon='add' floated='left'/>}
           content={<AddEventForm parent="events"/>}
@@ -101,6 +102,17 @@ class CommunityEvents extends React.Component {
         <Segment style={{overflow:'auto', maxHeight:770}} size='massive'>
             {events}
         </Segment>
+=======
+              <Popup flowing='true' keepInViewPort='true' size='huge' position='bottom left'
+                trigger={<Button icon='add' floated='left'/>}
+                content={<AddEventForm/>}
+                basic
+                on='click'
+              />
+              <Segment style={{overflow:'auto', maxHeight:670, minHeight:670}} size='massive'>
+                  {events}
+              </Segment>
+>>>>>>> cb74aba645ed5c3c4f2d9d000ef9b2163ecfce32
       </div>
     );
   }

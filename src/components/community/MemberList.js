@@ -13,7 +13,7 @@ const eventsInfo = [
     date: "3/30/19",
     points: "47",
     url: "Come see the tiger!"
- 
+
   },
   {
     name: "Jason Cabrera",
@@ -33,7 +33,7 @@ const eventsInfo = [
     points: "123",
     url: "Come see the tiger!4"
   },
- 
+
 ]
 
 class MemberList extends React.Component {
@@ -65,7 +65,7 @@ class MemberList extends React.Component {
                 basic
                 on='click'
               />
-              <Segment style={{overflow:'auto', maxHeight:770}} size='massive'>
+              <Segment style={{overflow:'auto', maxHeight:670, minHeight:670}} size='massive'>
               <MemberCard feed ={members}>
               </MemberCard>
               </Segment>

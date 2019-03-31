@@ -17,12 +17,15 @@
     "react-scripts": "2.1.8",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.86.0",
-    "twilio": "^3.30.0"
+    "twilio": "^3.30.0",
+    "yarn": "^1.15.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "build-semantic": "cd src/semantic && gulp build-css build-assets",
+    "watch-semantic": "cd src/semantic && yarn run build-semantic && gulp watch",
+    "start": "yarn run build-semantic && react-scripts start",
+    "build": "yarn run build-semantic && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "server": "node-env-run server --exec nodemon | pino-colada",
     "deploy": "npm run build&&gh-pages -d build",
@@ -45,6 +48,7 @@
     "node-env-run": "^3.0.2",
     "nodemon": "^1.18.10",
     "npm-run-all": "^4.1.5",
-    "pino-colada": "^1.4.4"
+    "pino-colada": "^1.4.4",
+    "semantic-ui": "^2.4.2"
   }
 }

@@ -9,7 +9,7 @@ const eventsInfo = [
       date: "3/30/19",
       points: "47",
       url: "Come see the tiger!"
-   
+
     },
     {
       name: "Jason Cabrera",
@@ -29,14 +29,14 @@ const eventsInfo = [
       points: "123",
       url: "Come see the tiger!4"
     },
-   
+
   ]
 
 class MemberCard extends React.Component {
   constructor() {
     super();
 
-  
+
   }
   render() {
     const members = eventsInfo.map((text) => <MemberFeed name={text.name} date={text.date} image={text.url} points={text.points}/>)
@@ -46,9 +46,9 @@ class MemberCard extends React.Component {
           <Card.Header>Community Members</Card.Header>
         </Card.Content>
         <Card.Content>
-        <Feed>
+        <Feed size='large' fluid>
             {members}
-         </Feed>   
+         </Feed>
         </Card.Content>
       </Card>
     );
