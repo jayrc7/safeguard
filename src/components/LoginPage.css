@@ -15,3 +15,30 @@
     width: 10%;
     height: 6%;
 }
+
+#header {
+  position: absolute;
+  top: 13%;
+  left: 30%;
+  font-size: 1000%;
+  text-align: center;
+  margin:auto;
+  color: white;
+  -webkid-text-stroke: 4px black;
+  text-shadow:
+  | 4px 4px 0 #FFFFFF,
+   -1px -1px 0 #FFFFFF,
+    1px -1px 0 #FFFFFF,
+    -1px 1px 0 #FFFFFF,
+    3px 3px 0 #FFFFFF;
+}
+
+#image {
+  display:block;
+  position: relative;
+  margin:auto;
+}
+
+#head-back {
+  background: black;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button, Header } from 'semantic-ui-react';
 import {Link, Route} from 'react-router-dom';
-
+import hood from './images/ourHood.png'
 import './LoginPage.css';
 
 class LoginPage extends Component{
@@ -30,18 +30,19 @@ class LoginPage extends Component{
     render(){
         return(
             <div>
-
+              <img id='image'src={hood} size='small'/>
+              <div id='head-back'>
+                <h1 id='header'>SafeGuard</h1>
+              </div>
               <Button id="signinBtn">
                 <Link to="/signin/">Sign in</Link>
               </Button>
               <Button id="signupBtn">
                 <Link to="/signup/">Sign up</Link>
               </Button>
-
-
-
-
-
+              <div id='desc-back'>
+                <h1 id='description'>Description</h1>
+              </div>
             </div>
         );
     }
