@@ -43,9 +43,19 @@ const eventsInfo = [
     description: "Come see the tiger!5"
   },
   {
-    subject: "Tiger sighting6",
+    subject: "Tiger sighting7",
     date: "2/3/18",
     description: "Come see the tiger!6"
+  },
+  {
+    subject: "Tiger sighting7",
+    date: "2/3/18",
+    description: "Come see the tiger!6"
+  },
+  {
+    subject: "Tiger sighting8",
+    date: "2/3/18",
+    description: "Come see the tiger!8"
   }
 ]
 
@@ -109,15 +119,15 @@ class HomePage extends React.Component {
             </Grid.Column>
             <Grid.Column width="5">
               <Header as='h3' dividing size='huge'>Event Schedule</Header>
-              <Popup flowing='true' keepInViewPort='true' size='huge' position='bottom left'
-                trigger={<Button icon='add' floated='left'/>}
-                content={<AddEventForm/>}
-                basic
-                on='click'
-              />
-              <Segment style={{overflow:'auto', maxHeight:770}} size='massive'>
-                {events}
-              </Segment>
+                <Popup flowing='true' keepInViewPort='true' size='huge' position='bottom left'
+                  trigger={<Button icon='add' floated='left'/>}
+                  content={<AddEventForm/>}
+                  basic
+                  on='click'
+                  />
+                <Segment style={{overflow:'auto', maxHeight:720}} size='large'>
+                    {events}
+                </Segment>
             </Grid.Column>
           </Grid.Row>
         </Grid>
