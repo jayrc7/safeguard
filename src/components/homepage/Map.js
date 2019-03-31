@@ -39,7 +39,7 @@ class Map extends React.Component {
       <div style={{ height: '83vh', width: '100%' }}>
       <Header as='h3' dividing size='huge'>Safety Map</Header>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyDe1ZbUr1bDHmNtqZEG1yxRfWUunGbfaBA" }}
+          bootstrapURLKeys={{ key: "AIzaSyCK7kmYS38lPKj1XBVp7D-OFVUaExOtHDo" }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >

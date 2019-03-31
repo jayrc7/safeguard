@@ -38,7 +38,7 @@ class Nav extends Component {
               <Menu.Item as="a" href="/community">
                 Community
               </Menu.Item>
-              <Menu.Item as="a" href="/patrol">
+              <Menu.Item as="a" href="/patrols">
                 Patrol
               </Menu.Item>
             </Container>
