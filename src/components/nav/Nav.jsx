@@ -47,16 +47,17 @@ class Nav extends Component {
               <Menu.Item as="a" href="/patrols">
                 Patrol
               </Menu.Item>
-              <Menu.Item as="a" onClick={logout} position='right'>
-                Logout
-              </Menu.Item>
-            
-            <Dropdown item text='Choose Community' position='right'>
+            <Menu.Item position='right'>  
+            <Dropdown item text='Choose Community' fluid='true'>
               <Dropdown.Menu>
                 <Dropdown.Item>School</Dropdown.Item>
                 <Dropdown.Item>Home</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
+           </Menu.Item> 
+            <Menu.Item as="a" onClick={this.logout} position='right'>
+                Logout
+              </Menu.Item>
           </Menu>
         </Grid>
         <Grid padded className="mobile only">
