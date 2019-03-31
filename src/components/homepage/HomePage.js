@@ -18,45 +18,12 @@ const currEventInfo =
   }
 
 const eventsInfo = [
+
+
   {
     subject: "Tiger sighting",
     date: "2/3/18",
     description: "Come see the tiger!"
-  },
-  {
-    subject: "Tiger sighting2",
-    date: "2/3/18",
-    description: "Come see the tiger!2"
-  },
-  {
-    subject: "Tiger sighting3",
-    date: "2/3/18",
-    description: "Come see the tiger!3"
-  },
-  {
-    subject: "Tiger sighting4",
-    date: "2/3/18",
-    description: "Come see the tiger!4"
-  },
-  {
-    subject: "Tiger sighting5",
-    date: "2/3/18",
-    description: "Come see the tiger!5"
-  },
-  {
-    subject: "Tiger sighting7",
-    date: "2/3/18",
-    description: "Come see the tiger!6"
-  },
-  {
-    subject: "Tiger sighting7",
-    date: "2/3/18",
-    description: "Come see the tiger!6"
-  },
-  {
-    subject: "Tiger sighting8",
-    date: "2/3/18",
-    description: "Come see the tiger!8"
   }
 ]
 
@@ -116,7 +83,24 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const events = eventsInfo.map((text) => <Event subject={text.subject} date={text.date} description={text.description}/>)
+
+    var db = firebase.firestore()
+    var entries = db.collection("Communities").doc("los angeles").collection("La Tijera Elementary School").doc("incidents").get().then(
+        function(doc){
+            console.log(doc.data())
+            for(let property in doc.data().events){
+               let newInfo = {
+                   subject: doc.data().events[property].title, 
+                   date: "today", 
+                   description: doc.data().events[property].description
+               }
+              
+               console.log(newInfo)
+            }
+        })
+    
+
+    
 
     return (
       <div>
