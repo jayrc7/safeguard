@@ -5,6 +5,9 @@ import LoginPage from './components/LoginPage';
 import SignUp from './components/signup/signup';
 import SignIn from './components/signin/signin';
 import HomePage from './components/homepage/HomePage';
+import Community from './components/community/Community';
+import Patrols from './components/patrols/Patrols';
+import Nav from './components/nav/Nav';
 
 import './App.css';
 
@@ -25,20 +28,10 @@ class App extends Component {
             {/* <Route path="/" exact render={(props) => <Home {...props}/>}/> */}
             <Route exact path="/" component={LoginPage}/>
             <Route exact path="/signup/" component={SignUp}/>
-            {/* NOT FOUND PAGE */}
-          </Switch>
-          <Switch>
-            {/* <Route path="/" exact render={(props) => <Home {...props}/>}/> */}
-            <Route exact path="/" component={LoginPage}/>
             <Route exact path="/signin/" component={SignIn}/>
-            import SignIn from './signin/signin';
-            {/* NOT FOUND PAGE */}
-          </Switch>
-          <Switch>
-            {/* <Route path="/" exact render={(props) => <Home {...props}/>}/> */}
-            <Route exact path="/" component={LoginPage}/>
             <Route exact path="/homepage/" component={HomePage}/>
-            import SignIn from './homepage/HomePage';
+            <Route exact path="/community/" component={Community}/>
+            <Route exact path="/patrols/" component={Patrols}/>
             {/* NOT FOUND PAGE */}
           </Switch>
         </BrowserRouter>

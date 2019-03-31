@@ -1,20 +1,9 @@
 import React from 'react';
-import { Grid, Button, Popup, Segment, Header} from 'semantic-ui-react'
-import Nav from './../nav/Nav.jsx'
-import AddEventForm from './AddEventForm'
-import Event from './Event'
-import Map from './Map';
+import { Button, Popup, Segment} from 'semantic-ui-react'
+import AddEventForm from './../homepage/AddEventForm'
+import Event from './../homepage/Event'
 
-import firebase from '../../firebase';
 
-import './HomePage.css'
-
-const currEventInfo =
-  {
-    subject: "Tiger sighting",
-    date: "2/3/18",
-    description: "Come see the tiger!"
-  }
 
 const eventsInfo = [
   {
@@ -49,7 +38,7 @@ const eventsInfo = [
   }
 ]
 
-class HomePage extends React.Component {
+class CommunityEvents extends React.Component {
   constructor() {
     super();
 
@@ -100,14 +89,6 @@ class HomePage extends React.Component {
 
     return (
       <div>
-        <Nav/>
-        <Grid centered='true' padded='true'>
-          <Grid.Row columns={2}>
-            <Grid.Column width="11">
-              <Header as='h3' dividing size='huge'>Safety Map</Header>
-              <Map/>
-            </Grid.Column>
-            <Grid.Column width="5">
               <Popup flowing='true' keepInViewPort='true' size='huge' position='bottom left'
                 trigger={<Button icon='add' floated='left'/>}
                 content={<AddEventForm/>}
@@ -115,14 +96,11 @@ class HomePage extends React.Component {
                 on='click'
               />
               <Segment style={{overflow:'auto', maxHeight:770}} size='massive'>
-                {events}
+                  {events}
               </Segment>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
       </div>
     );
   }
 }
 
-export default HomePage;
+export default CommunityEvents;

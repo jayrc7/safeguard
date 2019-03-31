@@ -27,35 +27,33 @@ class Nav extends Component {
     return (
       <div className="Nav">
         <Grid padded className="tablet computer only">
-          <Menu borderless fluid inverted size="huge">
+          <Menu borderless fluid inverted size="massive">
             <Container>
-              <Menu.Item header as="a" href="#root">
-                Project Name
+              <Menu.Item header as="a" href="/homepage">
+                SafeGuard
               </Menu.Item>
-              <Menu.Item active as="a" href="#root">
+              <Menu.Item active as="a" href="/homepage">
                 Home
               </Menu.Item>
-              <Menu.Item as="a" href="#root">
+              <Menu.Item as="a" href="/community">
                 Community
               </Menu.Item>
-              <Menu.Item as="a" href="#root">
+              <Menu.Item as="a" href="/patrols">
                 Patrol
               </Menu.Item>
-              <Dropdown item text='Display Options'>
-                <Dropdown.Menu>
-                  <Dropdown.Header>Text Size</Dropdown.Header>
-                  <Dropdown.Item>Small</Dropdown.Item>
-                  <Dropdown.Item>Medium</Dropdown.Item>
-                  <Dropdown.Item>Large</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
             </Container>
+            <Dropdown item text='Choose Community' position='left'>
+              <Dropdown.Menu>
+                <Dropdown.Item>School</Dropdown.Item>
+                <Dropdown.Item>Home</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </Menu>
         </Grid>
         <Grid padded className="mobile only">
           <Menu borderless fluid inverted size="huge">
             <Menu.Item header as="a" href="#root">
-              Project Name
+              Safeguard
             </Menu.Item>
             <Menu.Menu position="right">
               <Menu.Item>
