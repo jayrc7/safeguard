@@ -10,22 +10,7 @@ import firebase from '../../firebase';
 
 import './HomePage.css'
 
-const currEventInfo =
-  {
-    subject: "Tiger sighting",
-    date: "2/3/18",
-    description: "Come see the tiger!"
-  }
-
-const eventsInfo = [
-
-
-  {
-    subject: "Tiger sighting",
-    date: "2/3/18",
-    description: "Come see the tiger!"
-  }
-]
+const db = firebase.firestore();
 
 class HomePage extends React.Component {
   constructor() {
@@ -41,18 +26,21 @@ class HomePage extends React.Component {
     };
 
     this.eventIndex = 0;
+
+    this.updateEventsInfo();
   }
 
-  componentWillMount(){
-        let currentCommunity = cookie.load('profile').currentCommunity;
-        console.log(currentCommunity)
+  updateEventsInfo = () => {
+    db.collection("Communities").doc('los angeles').collection(cookie.load("profile").currentCommunity).doc("incidents").get().then((doc) => {
+      var tmp = [];
+      Object.keys(doc.data().events).forEach((key) => {
+        tmp.push(doc.data().events[key]);
+      })
+      this.setState({
+        events: tmp
+      })
+    })
   }
-
-  updateCurrEvent(event) {
-    const newState = this.event.target.value;
-    this.setState(newState);
-  }
-
 
   addEvent = () => {
     if (this.state.currEventInfo === '') {
@@ -78,29 +66,40 @@ class HomePage extends React.Component {
     this.setState(newState);
   }
 
-  refresh = () => {
-    this.setState({})
+  submit = () => {
+    for ( let comm of this.state.community ) {
+      db.collection("Communities").doc("los angeles").collection(comm).doc(this.props.parent).get().then((doc) => {
+        if ( doc.data() !== undefined ) {
+          let events = doc.data().events;
+          events[this.state.title] = {
+            subject: this.state.title,
+            description: this.state.description,
+            logged: firebase.firestore.FieldValue.serverTimestamp(),
+            date: 'this.state.time,'
+          }
+          db.collection("Communities").doc('los angeles').collection(comm).doc(this.props.parent).update({
+            events
+          })
+        }
+        else {
+          let events = {};
+          events[this.state.title] = {
+            subject: this.state.title,
+            description: this.state.description,
+            date: '2/4/5',
+            logged: firebase.firestore.FieldValue.serverTimestamp(),
+          }
+
+          db.collection("Communities").doc('los angeles').collection(comm).doc(this.props.parent).set({
+            events
+          })
+        }
+      })
+    }
   }
 
   render() {
-
-    var db = firebase.firestore()
-    var entries = db.collection("Communities").doc("los angeles").collection("La Tijera Elementary School").doc("incidents").get().then(
-        function(doc){
-            console.log(doc.data())
-            for(let property in doc.data().events){
-               let newInfo = {
-                   subject: doc.data().events[property].title, 
-                   date: "today", 
-                   description: doc.data().events[property].description
-               }
-              
-               console.log(newInfo)
-            }
-        })
-    
-
-    
+    const events = this.state.events.map((text) => <Event subject={text.title} date={text.date} description={text.description}/>)
 
     return (
       <div>
@@ -121,7 +120,7 @@ class HomePage extends React.Component {
                   on='click'
                   />
                 <Segment color='black' style={{overflow:'auto', maxHeight:670}} size='large'>
-                    {events}
+                  {events}
                 </Segment>
             </Grid.Column>
           </Grid.Row>
