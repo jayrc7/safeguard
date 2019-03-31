@@ -7,10 +7,15 @@ import "./Nav.css";
 import CommunityChooser from "./CommunityChooser.jsx"
 
 class Nav extends Component {
-  state = {
-    dropdownMenuStyle: {
-      display: "none"
+  constructor() {
+    super();
+
+    this.state = {
+      dropdownMenuStyle: {
+        display: "none"
+      }
     }
+    console.log(cookie.load("profile"));
   };
 
   handleToggleDropdownMenu = () => {
@@ -30,6 +35,8 @@ class Nav extends Component {
   }
 
   render() {
+    const communities = cookie.load("profile").communities.map((community) => <Dropdown.Item>{community}</Dropdown.Item> )
+
     return (
       <div className="Nav">
         <Grid padded className="tablet computer only">
@@ -50,8 +57,7 @@ class Nav extends Component {
             </Container>
             <Dropdown item text='Choose Community' position='left'>
               <Dropdown.Menu>
-                <Dropdown.Item>School</Dropdown.Item>
-                <Dropdown.Item>Home</Dropdown.Item>
+                {communities}
               </Dropdown.Menu>
             </Dropdown>
           </Menu>
@@ -90,8 +96,10 @@ class Nav extends Component {
               <Menu.Item as="a" href="#root">
                 Patrol
               </Menu.Item>
+
               <CommunityChooser>
               </CommunityChooser>
+
             </Menu>
           </Menu>
         </Grid>

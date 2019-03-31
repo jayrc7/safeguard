@@ -1,9 +1,10 @@
 import React from 'react';
 import { Grid, Button, Popup, Segment, Header} from 'semantic-ui-react'
-import Nav from './../nav/Nav.jsx'
+import Nav from './../nav/Nav'
 import AddEventForm from './AddEventForm'
 import Event from './Event'
 import Map from './Map';
+import cookie from 'react-cookies'
 
 import firebase from '../../firebase';
 
@@ -46,6 +47,11 @@ const eventsInfo = [
     subject: "Tiger sighting6",
     date: "2/3/18",
     description: "Come see the tiger!6"
+  },
+  {
+    subject: "Tiger sighting7",
+    date: "2/3/18",
+    description: "Come see the tiger!7"
   }
 ]
 
@@ -107,8 +113,9 @@ class HomePage extends React.Component {
               <Header as='h3' dividing size='huge'>Safety Map</Header>
               <Map/>
             </Grid.Column>
+
             <Grid.Column width="5">
-              <Header as='h3' dividing size='huge'>Event Schedule</Header>
+              <Header as='h3' dividing size='huge'>Community Alerts</Header>
               <Popup flowing='true' keepInViewPort='true' size='huge' position='bottom left'
                 trigger={<Button icon='add' floated='left'/>}
                 content={<AddEventForm/>}

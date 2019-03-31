@@ -49,10 +49,14 @@ class SignIn extends React.Component {
         alert("Mismatching username and password");
       }
       else {
-        cookie.save('profile', doc.data());
+        let profile = doc.data();
+        profile["currentCommunity"] = profile.communities[0];
+        cookie.save('profile', profile);
+
         this.props.history.push(`/homepage`)
       }
     })
+
   }
 
   render() {

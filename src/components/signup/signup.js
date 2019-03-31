@@ -8,7 +8,6 @@ const db = firebase.firestore();
 
 db.settings({timestampsInSnapshots: true});
 
-
 function LocalCommunities(prop) {
 	if ( prop.data === undefined ) {
 		return <h1> PLACEHOLDER FOR ADDRESS</h1>
@@ -16,15 +15,11 @@ function LocalCommunities(prop) {
 	else {
 
 		let tmp1 = '';
-		let tmp2 = '';
-		console.log(prop.data[0]);
 		
 		prop.data.forEach((name) => {
 			tmp1 = <input type="checkbox" onChange={prop.toggle} value={prop.data[0]}></input>;
 		})
 
-console.log(tmp2)
-console.timeLog(prop.toggle);
 		return tmp1	;
 	}
 }
@@ -191,6 +186,8 @@ class SignUp extends Component {
 				communities: this.state.selectedCommunities,
 				pass: this.state.pass
 			}
+
+			profile["currentCommunity"] = profile.communities[0];
 
 			db.collection("Parents").doc((this.state.first + this.state.last).toLowerCase()).set( profile );
 

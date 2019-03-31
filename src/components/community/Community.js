@@ -1,9 +1,10 @@
 import React from 'react';
 import { Grid, Image} from 'semantic-ui-react'
-import Nav from './../nav/Nav.jsx'
+import Nav from './../nav/Nav'
 import MemberList from './MemberList'
 import ChatImg from './chat.jpg'
 import CommunityEvents from './CommunityEvents'
+
 class Community extends React.Component{
     render() {
         

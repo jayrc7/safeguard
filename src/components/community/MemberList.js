@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Popup, Segment} from 'semantic-ui-react'
-import Nav from './../nav/Nav.jsx'
+import Nav from './../nav/Nav.js'
 
 import AddEventForm from './../homepage/AddEventForm'
 import MemberFeed from './MemberFeed'
