@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import cookie from 'react-cookies';
 import {Redirect} from 'react-router-dom';
-
-import { Button, Container, Dropdown, Grid, Header, Icon, Menu } from "semantic-ui-react";
+import shield from '../images/shield.png';
+import { Button, Container, Dropdown, Grid, Header, Icon, Menu, Image } from "semantic-ui-react";
 
 import "./Nav.css";
 import CommunityChooser from "./CommunityChooser.jsx"
@@ -49,12 +49,12 @@ class Nav extends Component {
       <div className="Nav">
         <Grid padded className="tablet computer only">
           <Menu borderless fluid inverted size="massive">
-            
+
               <Menu.Item header as="a" href="/homepage">
-                SafeGuard
+                <Image src={shield} size='mini'/>
               </Menu.Item>
-              <Menu.Item active as="a" href="/homepage">
-                Home
+              <Menu.Item as="a" href="/homepage">
+                SafeGuard
               </Menu.Item>
               <Menu.Item as="a" href="/community">
                 Community
@@ -65,17 +65,18 @@ class Nav extends Component {
               <Menu.Item as="a" onClick={this.logout} position='right'>
                 Logout
               </Menu.Item>
-              
+
             <Dropdown item text='Choose Community'>
               <Dropdown.Menu>
                 {communities}
               </Dropdown.Menu>
             </Dropdown>
-            
-            
+
+
           </Menu>
         </Grid>
         <Grid padded className="mobile only">
+
           <Menu borderless fluid inverted size="huge">
             <Menu.Item header as="a" href="#root">
               Safeguard
