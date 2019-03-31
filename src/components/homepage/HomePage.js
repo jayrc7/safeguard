@@ -131,7 +131,7 @@ class HomePage extends React.Component {
                   basic
                   on='click'
                   />
-                <Segment style={{overflow:'auto', maxHeight:720}} size='large'>
+                <Segment style={{overflow:'auto', maxHeight:670}} size='large'>
                     {events}
                 </Segment>
             </Grid.Column>

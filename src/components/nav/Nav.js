@@ -50,7 +50,7 @@ class Nav extends Component {
         <Grid padded className="tablet computer only">
           <Menu borderless fluid inverted size="massive">
 
-              <Menu.Item header as="a" href="/homepage">
+              <Menu.Item>
                 <Image src={shield} size='mini'/>
               </Menu.Item>
               <Menu.Item as="a" href="/homepage">

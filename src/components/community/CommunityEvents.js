@@ -80,7 +80,7 @@ class CommunityEvents extends React.Component {
                 basic
                 on='click'
               />
-              <Segment style={{overflow:'auto', maxHeight:770}} size='massive'>
+              <Segment style={{overflow:'auto', maxHeight:670, minHeight:670}} size='massive'>
                   {events}
               </Segment>
       </div>
