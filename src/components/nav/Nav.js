@@ -24,7 +24,7 @@ class Nav extends Component {
   handleToggleDropdownMenu = e => {
     let profile = cookie.load("profile");
     profile["currentCommunity"] = e.target.value;
-    cookie.set("profile", profile);
+    cookie.save("profile", profile);
 
     this.props.refresh();
   };

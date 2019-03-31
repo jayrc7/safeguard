@@ -15,6 +15,8 @@ class AddEventForm extends React.Component {
     this.state = {
       title: '',
       description: '',
+      date: '',
+      time: '',
       community: []
     }
     this.submit = this.submit.bind(this);
@@ -31,7 +33,9 @@ console.log(this.props.parent)
           events[this.state.title] = {
             title: this.state.title,
             description: this.state.description,
-            time: firebase.firestore.FieldValue.serverTimestamp(),
+            logged: firebase.firestore.FieldValue.serverTimestamp(),
+            time: this.state.time,
+            date: this.state.date
           }
           db.collection("Communities").doc('los angeles').collection(comm).doc(this.props.parent).update({
             events
@@ -42,7 +46,9 @@ console.log(this.props.parent)
           events[this.state.title] = {
             title: this.state.title,
             description: this.state.description,
-            time: firebase.firestore.FieldValue.serverTimestamp(),
+            logged: firebase.firestore.FieldValue.serverTimestamp(),
+            time: this.state.time,
+            date: this.state.date
           }
           db.collection("Communities").doc('los angeles').collection(comm).doc(this.props.parent).set({
             events
@@ -96,57 +102,38 @@ console.log(this.props.parent)
         }
       }}/>
     )
-
-    if ( this.props.parent === "incidents" ) {
-      return (
-        <Form>
-          <label>Add an Event</label>
-          <Form.Field label="Title" 
-                      control="input" 
-                      value={this.state.title} 
-                      onChange={this.handleTitleChange}/>
-          <Form.TextArea label='Description'
+    
+    return (
+      <Form>
+        <label>Add an Event</label>
+        <Form.Field label="Title" 
+                    control="input" 
+                    value={this.state.title} 
+                    onChange={this.handleTitleChange}/>
+        <FormGroup>
+          <Form.Field label="Date"
                       control="input"
-                      value={this.state.description}
-                      onChange={this.handleDescriptionChange}/>
-          <label>Community</label>
-          {communities}
-          <Button onClick={this.submit}>Submit</Button>
-        </Form>
-      )
-    }
-    else {
-      return (
-        <Form>
-          <label>Add an Event</label>
-          <Form.Field label="Title" 
-                      control="input" 
-                      value={this.state.title} 
-                      onChange={this.handleTitleChange}/>
-          <FormGroup>
-            <Form.Field label="Date"
-                        control="input"
-                        type="date"
-                        value={this.state.date}
-                        onChange={this.handleDateChange}
-                        />
-            <Form.Field label="Time"
-                        control="input"
-                        type="time"
-                        value={this.state.time}
-                        onChange={this.handleTimeChange}
-                        />
-          </FormGroup>
-          <Form.TextArea label='Description'
+                      type="date"
+                      value={this.state.date}
+                      onChange={this.handleDateChange}
+                      />
+          <Form.Field label="Time"
                       control="input"
-                      value={this.state.description}
-                      onChange={this.handleDescriptionChange}/>
-          <label>Community</label>
-          {communities}
-          <Button onClick={this.submit}>Submit</Button>
-        </Form>
-      )
-    }
+                      type="time"
+                      value={this.state.time}
+                      onChange={this.handleTimeChange}
+                      />
+        </FormGroup>
+        <Form.TextArea label='Description'
+                    control="input"
+                    value={this.state.description}
+                    onChange={this.handleDescriptionChange}/>
+        <label>Community</label>
+        {communities}
+        <Button onClick={this.submit}>Submit</Button>
+      </Form>
+    )
+    
     
   }
 }
