@@ -5,9 +5,9 @@ import { Tab } from 'semantic-ui-react'
 const patrolDataExample = [
   {
     time: '07:00',
-    user: '',
-    route: '',
-    completed: ''
+    user: 'Jorge Aparicio',
+    route: 'Avenue street, 2nd street, Pointer avenue, Financial street, Eatery garden, Father columbus street.',
+    completed: 'checkmark'
   },
   {
     time: '07:30',
