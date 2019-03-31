@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import './semantic/dist/semantic.min.css';
 
 import LoginPage from './components/LoginPage';
 import SignUp from './components/signup/signup';
