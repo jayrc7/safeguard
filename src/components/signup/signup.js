@@ -192,7 +192,7 @@ class SignUp extends Component {
 				pass: this.state.pass
 			}
 
-			db.collection("Parents").doc(this.state.first + this.state.last).set( profile );
+			db.collection("Parents").doc((this.state.first + this.state.last).toLowerCase()).set( profile );
 
 			cookie.save('profile', profile);
 			this.props.history.push(`/homepage`)
