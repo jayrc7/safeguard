@@ -68,6 +68,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
 This project connects community members in order to improve safety in the local area. Features include:
+
  • Community alert boards for safety related concerns that everyone on the app/website can view
  • Community message board for communicating to ensure that everyone can be easily accounted for
  • Interactive map with safehouse locations in case of safety hazards
