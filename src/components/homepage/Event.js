@@ -9,7 +9,7 @@ class Event extends React.Component {
   render() {
     return (
       <div>
-      <Card centered='true'>
+      <Card fluid centered='true'>
         <Card.Content>
           <Card.Header>{this.props.subject}</Card.Header>
           <Card.Meta>

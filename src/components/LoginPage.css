@@ -23,7 +23,7 @@
 #header {
   position: absolute;
   top: 13%;
-  left: 30%;
+  left: 32%;
   font-size: 1000%;
   text-align: center;
   margin:auto;
@@ -35,6 +35,15 @@
     1px -1px 0 #FFFFFF,
     -1px 1px 0 #FFFFFF,
     1px 1px 0 #FFFFFF;
+}
+
+#description {
+  position: absolute;
+  top: 84%;
+  left: 33%;
+  font-size: 350%;
+  text-align: center;
+  margin:auto;
 }
 
 #image {

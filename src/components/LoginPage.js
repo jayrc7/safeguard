@@ -41,7 +41,7 @@ class LoginPage extends Component{
                 <Link to="/signup/">Sign up</Link>
               </Button>
               <div id='desc-back'>
-                <h1 id='description'>Description</h1>
+                <h1 id='description'>Help protect your community!</h1>
               </div>
             </div>
         );
