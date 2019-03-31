@@ -41,7 +41,7 @@ class Nav extends Component {
       <div className="Nav">
         <Grid padded className="tablet computer only">
           <Menu borderless fluid inverted size="massive">
-            <Container>
+            
               <Menu.Item header as="a" href="/homepage">
                 SafeGuard
               </Menu.Item>
@@ -54,12 +54,17 @@ class Nav extends Component {
               <Menu.Item as="a" href="/patrols">
                 Patrol
               </Menu.Item>
-            </Container>
-            <Dropdown item text='Choose Community' position='left'>
+              <Menu.Item as="a" onClick={this.logout} position='right'>
+                Logout
+              </Menu.Item>
+              
+            <Dropdown item text='Choose Community'>
               <Dropdown.Menu>
                 {communities}
               </Dropdown.Menu>
             </Dropdown>
+            
+            
           </Menu>
         </Grid>
         <Grid padded className="mobile only">
@@ -99,7 +104,9 @@ class Nav extends Component {
 
               <CommunityChooser>
               </CommunityChooser>
-
+              <Menu.Item as="a" onClick={this.logout}>
+                Logout
+              </Menu.Item>
             </Menu>
           </Menu>
         </Grid>
