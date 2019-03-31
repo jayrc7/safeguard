@@ -10,31 +10,31 @@ class Community extends React.Component{
     this.setState({})
   }
 
-    render() {
-        return (
-          <div>
-            <Nav refresh={this.refresh}/>
-            <Grid centered='true' padded='true'>
-              <Grid.Row columns={3}>
-                <Grid.Column width="4">
-                <Header as='h3' dividing size='huge'>Community Members</Header>
-                <MemberList/>
+  render() {
+      return (
+        <div>
+          <Nav refresh={this.refresh}/>
+          <Grid centered='true' padded='true'>
+            <Grid.Row columns={3}>
+              <Grid.Column width="4">
+              <Header as='h3' dividing size='huge'>Community Members</Header>
+              <MemberList/>
 
-                </Grid.Column>
-                <Grid.Column width="7">
-                <img src={ChatImg}/>
+              </Grid.Column>
+              <Grid.Column width="7">
+              <img src={ChatImg}/>
 
-                </Grid.Column>
-                <Grid.Column width="4">
-                <Header as='h3' dividing size='huge'>Events Board</Header>
-                <CommunityEvents parent="events"/>
+              </Grid.Column>
+              <Grid.Column width="4">
+              <Header as='h3' dividing size='huge'>Events Board</Header>
+              <CommunityEvents parent="events"/>
 
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
-          </div>
-        );
-      }
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </div>
+      );
     }
+  }
 
 export default Community

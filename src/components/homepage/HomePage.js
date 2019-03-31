@@ -31,10 +31,14 @@ class HomePage extends React.Component {
   }
 
   updateEventsInfo = () => {
+    var seconds = Math.floor(new Date() / 1000);
+
     db.collection("Communities").doc('los angeles').collection(cookie.load("profile").currentCommunity).doc("incidents").get().then((doc) => {
       var tmp = [];
+      let i = 0;
       Object.keys(doc.data().events).forEach((key) => {
         tmp.push(doc.data().events[key]);
+        tmp[i].passed = Math.floor((seconds - tmp[i].time.seconds) / 60);
       })
       this.setState({
         events: tmp
@@ -98,8 +102,19 @@ class HomePage extends React.Component {
     }
   }
 
+  refresh = () => {
+    this.setState({})
+  }
+
   render() {
-    const events = this.state.events.map((text) => <Event subject={text.title} date={text.date} description={text.description}/>)
+  const events = this.state.events.map((text) => {
+    if ( text.passed === undefined ) {
+      return <Event subject={text.title} description={text.description}/>;
+    }
+    else {
+      return <Event subject={text.title} date={text.passed+"min ago"} description={text.description}/>;
+    }
+  })
 
     return (
       <div>

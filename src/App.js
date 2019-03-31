@@ -22,7 +22,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{height:'100%'}}>
         <BrowserRouter>
           <Switch>
             {/* <Route path="/" exact render={(props) => <Home {...props}/>}/> */}

@@ -29,9 +29,9 @@ class LoginPage extends Component{
 
   render(){
     return(
-        <div>
+        <div id="body">
           <img id='image'src={hood} size='small'/>
-          <div id='head-back'>
+          <div>
             <h1 id='header'>SafeGuard</h1>
           </div>
           <Button id="signinBtn" href='/signin/' >

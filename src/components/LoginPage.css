@@ -1,3 +1,7 @@
+#body {
+  background-color: grey;
+  height: 100%;
+}
 
 /* CHANGE COLORS OF THE BUTTONS */
 #signinBtn {
@@ -49,8 +53,4 @@
   display:block;
   position: relative;
   margin:auto;
-}
-
-#head-back {
-  background: black;
 }
