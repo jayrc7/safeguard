@@ -34,10 +34,10 @@ class LoginPage extends Component{
               <div id='head-back'>
                 <h1 id='header'>SafeGuard</h1>
               </div>
-              <Button id="signinBtn">
+              <Button id="signinBtn" href='/signin/' >
                 <Link to="/signin/">Sign in</Link>
               </Button>
-              <Button id="signupBtn">
+              <Button id="signupBtn" href='/signup/'>
                 <Link to="/signup/">Sign up</Link>
               </Button>
               <div id='desc-back'>
