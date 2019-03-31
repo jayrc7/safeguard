@@ -8,9 +8,9 @@ class Event extends React.Component {
 
   render() {
     return (
-      <div>
-      <Card fluid centered='true'>
-        <Card.Content>
+      <div>  
+      <Card fluid centered='true' color='black'>
+        <Card.Content color='black'>
           <Card.Header>{this.props.subject}</Card.Header>
           <Card.Meta>
             <span className='date'>{this.props.date}</span>
