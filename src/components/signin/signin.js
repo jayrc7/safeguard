@@ -39,14 +39,20 @@ class SignIn extends React.Component {
   }
 
   login = () => {
-    console.log(this.state.name, this.state.pass, this.state.parent);
-    db.collection("Parents").doc((this.state.name.toLowerCase()).split(' ').join('')).get().then((doc) => {
-      
-      console.log(doc.data());
-      console.log(this.state.name.toLowerCase()).split(' ').join(''));
+    if ( !this.state.parent ) {
+      alert("Please ask your parents to log in");
+      return;
+    }
 
+    db.collection("Parents").doc((this.state.name.toLowerCase().split(' ').join(''))).get().then((doc) => {
+      if ( !doc.data() || this.state.pass !== doc.data().pass ) {
+        alert("Mismatching username and password");
+      }
+      else {
+        cookie.save('profile', doc.data());
+        this.props.history.push(`/homepage`)
+      }
     })
-
   }
 
   render() {

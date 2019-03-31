@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-
+import cookie from 'react-cookies';
 
 import { Button, Container, Dropdown, Grid, Header, Icon, Menu } from "semantic-ui-react";
 
 import "./Nav.css";
 import CommunityChooser from "./CommunityChooser.jsx"
+
 class Nav extends Component {
   state = {
     dropdownMenuStyle: {
@@ -22,6 +23,11 @@ class Nav extends Component {
 
     this.setState(newState);
   };
+
+  logout = () => {
+    cookie.remove('profile');
+    this.props.history.push(`/`)
+  }
 
   render() {
     return (
