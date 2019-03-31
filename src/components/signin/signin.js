@@ -19,7 +19,7 @@ class SignIn extends React.Component {
             <Form.Field label="Email" control="input" />
             <Form.Field label="Password" control="input" type="password"/>
           </Form.Group>
-          <Form.Button>Submit</Form.Button>
+          <Form.Button>Login</Form.Button>
         </Form>
       </div>
     );
